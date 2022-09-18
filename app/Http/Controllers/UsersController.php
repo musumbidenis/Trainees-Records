@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use DB;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Yajra\DataTables\DataTables;
-use App\DataTables\UsersDataTable;
 use Illuminate\Support\Facades\Validator;
 
 class UsersController extends Controller
@@ -16,23 +14,11 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(UsersDataTable $dataTable)
+    public function index()
     {
-        // if ($request->ajax()) {
-        //     $users = DB::select('select * from users');
-
-        //     return Datatables::of($users)
-        //         ->addIndexColumn()
-        //         ->addColumn('action', function ($row) {
-        //             $btn = '<a href="javascript:void(0)" id="edit" class="btn btn-primary btn-sm">Edit</a>';
-
-        //             return $btn;
-        //         })
-
-        //         ->rawColumns(['action'])
-        //         ->make(true);
-        // }
-        return $dataTable->render('pages.users.all');
+        // $users = DB::select('select * from users');
+        // return view('pages.users.all', ["users"=>$users]);
+        return view('pages.users.all');
     }
 
     /**

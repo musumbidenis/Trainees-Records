@@ -17,11 +17,6 @@ class SubjectsController extends Controller
      */
     public function index(Request $request)
     {
-        if ($request->ajax()) {
-            $subjects = DB::select('select * from subjects');
-
-            return Datatables::of($subjects)->make(true);
-        }
         return view('pages.subjects.all');
     }
 
@@ -32,7 +27,8 @@ class SubjectsController extends Controller
      */
     public function create()
     {
-        return view('pages.subjects.new');
+        $programmes=DB::select('select * from programmes');
+        return view('pages.subjects.new',['programmes'=>$programmes]);
     }
 
     /**
@@ -57,10 +53,13 @@ class SubjectsController extends Controller
             return back()->with('toast_error', $validator->messages()->all()[0])->withInput();
         } else {
 
+            $programme_id = $request->programme;
+            $dept_id = DB::select('select dept_id from programmes where programme_id = ?', [$programme_id]);
             //Save the input data to database
             $subject = new Subject();
             $subject->subject_name = $request->subject_name;
-            $subject->subject_type = $request->subject_type;
+            $subject->programme_id = $programme_id;
+            $subject->dept_id = $dept_id;
             $subject->save();
 
             return back()->withSuccess('New Subject Created Successfully!');

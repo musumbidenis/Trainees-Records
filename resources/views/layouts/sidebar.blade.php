@@ -101,25 +101,25 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a data-bs-toggle="collapse" href="#venues" class="nav-link text-white {{ Request::path() == 'venues/create' || Request::path() == 'venues' ? 'active' : '' }}"
+                <a data-bs-toggle="collapse" href="#programmes" class="nav-link text-white {{ Request::path() == 'programmes/create' || Request::path() == 'programmes' ? 'active' : '' }}"
                     aria-controls="page" role="button" aria-expanded="false">
                     <i class="material-icons-round opacity-10">local_library</i>
-                    <span class="nav-link-text ms-2  ps-1"> Venues <b class="caret"></b></span>
+                    <span class="nav-link-text ms-2  ps-1"> Programmes <b class="caret"></b></span>
                 </a>
-                <div class="collapse {{ Request::path() == 'venues/create' || Request::path() == 'venues' ? 'show' : '' }}" id="venues">
+                <div class="collapse {{ Request::path() == 'programmes/create' || Request::path() == 'programmes' ? 'show' : '' }}" id="programmes">
                     <ul class="nav nav-sm flex-column">
                         <li class="nav-item">
-                            <a class="nav-link text-white {{ Request::path() == 'venues' ? 'active bg-gradient-primary' : '' }}"
-                                href="/venues">
+                            <a class="nav-link text-white {{ Request::path() == 'programmes' ? 'active bg-gradient-primary' : '' }}"
+                                href="/programmes">
                                 <span class="sidenav-mini-icon"> R </span>
                                 <span class="sidenav-normal  ms-2  ps-1"> Reports </span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white {{ Request::path() == 'venues/create' ? 'active bg-gradient-primary' : '' }}"
-                                href="/venues/create">
+                            <a class="nav-link text-white {{ Request::path() == 'programmes/create' ? 'active bg-gradient-primary' : '' }}"
+                                href="/programmes/create">
                                 <span class="sidenav-mini-icon"> N </span>
-                                <span class="sidenav-normal  ms-2  ps-1"> New Venue </span>
+                                <span class="sidenav-normal  ms-2  ps-1"> New Programme </span>
                             </a>
                         </li>
                     </ul>
@@ -151,25 +151,25 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a data-bs-toggle="collapse" href="#classes" class="nav-link text-white {{ Request::path() == 'classes/create' || Request::path() == 'classes' ? 'active' : '' }}"
+                <a data-bs-toggle="collapse" href="#students" class="nav-link text-white {{ Request::path() == 'students/create' || Request::path() == 'students' ? 'active' : '' }}"
                     aria-controls="page" role="button" aria-expanded="false">
                     <i class="material-icons-round opacity-10">school</i>
-                    <span class="nav-link-text ms-2  ps-1"> Classes <b class="caret"></b></span>
+                    <span class="nav-link-text ms-2  ps-1"> Students <b class="caret"></b></span>
                 </a>
-                <div class="collapse {{ Request::path() == 'classes/create' || Request::path() == 'classes' ? 'show' : '' }}" id="classes">
+                <div class="collapse {{ Request::path() == 'students/create' || Request::path() == 'students' ? 'show' : '' }}" id="students">
                     <ul class="nav nav-sm flex-column">
                         <li class="nav-item">
-                            <a class="nav-link text-white {{ Request::path() == 'classes' ? 'active bg-gradient-primary' : '' }}"
-                                href="/classes">
+                            <a class="nav-link text-white {{ Request::path() == 'students' ? 'active bg-gradient-primary' : '' }}"
+                                href="/students">
                                 <span class="sidenav-mini-icon"> R </span>
                                 <span class="sidenav-normal  ms-2  ps-1"> Reports </span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white {{ Request::path() == 'classes/create' ? 'active bg-gradient-primary' : '' }}"
-                                href="/classes/create">
+                            <a class="nav-link text-white {{ Request::path() == 'students/create' ? 'active bg-gradient-primary' : '' }}"
+                                href="/students/create">
                                 <span class="sidenav-mini-icon"> N </span>
-                                <span class="sidenav-normal  ms-2  ps-1"> New Class </span>
+                                <span class="sidenav-normal  ms-2  ps-1"> New Student </span>
                             </a>
                         </li>
                     </ul>

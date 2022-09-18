@@ -3,26 +3,20 @@
 namespace App\Http\Controllers;
 
 use DB;
-use App\Models\Classs;
+use App\Models\Programme;
 use Illuminate\Http\Request;
-use Yajra\DataTables\DataTables;
 use Illuminate\Support\Facades\Validator;
 
-class ClassesController extends Controller
+class ProgrammesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        if ($request->ajax()) {
-            $classses = DB::select('select * from classses');
-
-            return Datatables::of($classses)->make(true);
-        }
-        return view('pages.classess.all');
+        return view('pages.programmes.all');
     }
 
     /**
@@ -33,7 +27,7 @@ class ClassesController extends Controller
     public function create()
     {
         $departments=DB::select('select * from departments');
-        return view('pages.classess.new',['departments'=>$departments]);
+        return view('pages.programmes.new',['departments'=>$departments]);
     }
 
     /**
@@ -45,33 +39,29 @@ class ClassesController extends Controller
     public function store(Request $request)
     {
         //Validate the form input fields
-        $validator = Validator::make(
-            $request->all(),
-            [
-                'class_name' => 'required',
-                'number_of_students' => 'required|numeric',
-                'department' => 'required',
-            ],
-        );
+        $validator = Validator::make($request->all(), [
+            'programme_name' => 'required',
+            'duration' => 'required',
+            'dept' => 'required|numeric',
+        ]);
 
         //Alert the user of the input error
         if ($validator->fails()) {
-            return back()->with('toast_error', $validator->messages()->all()[0])->withInput();
+            return back()
+                ->with('toast_error', $validator->messages()->all()[0])
+                ->withInput();
         } else {
-
             //Save the input data to database
-            $class = new Classs();
-            $class->class_name = $request->class_name;
-            $class->number_of_students = $request->number_of_students;
-            $class->dept_id = $request->department;
+            $programme = new Programme();
+            $programme->programme_name = $request->programme_name;
+            $programme->duration = $request->duration;
+            $programme->dept_id = $request->dept;
 
-            $class->save();
+            $programme->save();
 
-            return back()->withSuccess('New Class Created Successfully!');
-
+            return back()->withSuccess('New Programme Created Successfully!');
         }
     }
-
     /**
      * Display the specified resource.
      *
@@ -117,4 +107,3 @@ class ClassesController extends Controller
         //
     }
 }
-

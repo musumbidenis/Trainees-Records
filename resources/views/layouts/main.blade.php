@@ -22,9 +22,16 @@
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <!-- CSS Files -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css">
-    <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css">
     <link id="pagestyle" href="../assets/css/material-dashboard.css?v=3.0.5" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.9.2/tailwind.min.css"
+        integrity="sha512-l7qZAq1JcXdHei6h2z8h8sMe3NbMrmowhOl+QkP3UhifPpCW2MC4M0i26Y8wYpbz1xD9t61MLT9L1N773dzlOA=="
+        crossorigin="anonymous" />
+    @livewireStyles
+    @powerGridStyles
+
+</head>
 </head>
 
 <body class="g-sidenav-show  bg-gray-200 d-flex flex-column min-vh-100">
@@ -38,7 +45,8 @@
 
     <!--   JS Files   -->
     <script src="../assets/js/core/popper.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
     <script src="../assets/js/core/bootstrap.min.js"></script>
     <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
     <script src="../assets/js/plugins/jquery-validate.min.js"></script>
@@ -59,13 +67,13 @@
         }
 
         //Datetime picker by flatpickr js initialization
-        if (document.querySelector('.datetimepicker')) {
-            flatpickr('.datetimepicker', {
+        if (document.querySelector('.datepicker')) {
+            flatpickr('.datepicker', {
                 allowInput: true
             }); // flatpickr
         }
     </script>
-    @include('sweetalert::alert') 
+    @include('sweetalert::alert')
 
 </body>
 

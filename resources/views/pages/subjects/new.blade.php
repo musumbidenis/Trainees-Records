@@ -21,11 +21,11 @@
                                     value="{{ old('subject_name') }}">
                             </div>
                             <div class="select my-4">
-                                <select class="selectpicker col-lg-12 col-md-12" name="subject_type" id="subject_type">
-                                    <option disabled selected value="">Select Subject Type</option>
-                                    <option value="theory">Theory</option>
-                                    <option value="practical">Practical</option>
-                                    <option value="theory/practical">Theory/Practical</option>
+                                <select class="selectpicker col-lg-12 col-md-12" name="programme" id="programme">
+                                    <option disabled selected value="">Select Programme</option>
+                                    @foreach ($programmes as $programme)
+                                        <option value={{ $programme->programme_id }}>{{ $programme->programme_name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="d-flex justify-content-end mt-4">

@@ -54,7 +54,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('#new_user_for').validate({
+            $('#new_user_form').validate({
                 rules: {
                     first_name: {
                         required: true
